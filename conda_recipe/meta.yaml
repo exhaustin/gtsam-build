@@ -1,0 +1,32 @@
+package:
+  name: gtsam
+  version: {{ GIT_BUILD_STR }}
+
+source:
+  git_url: ../source
+
+build:
+  number: {{ GIT_DESCRIBE_NUMBER }}
+  script_env:
+    - PYTHON_VERSION
+
+requirements:
+  build:
+    - boost
+    - boost-cpp
+    - cmake
+    - eigen
+    - numpy=1.19
+    - pyparsing
+    - python
+    - tbb
+
+  run:
+    - boost
+    - boost-cpp
+    - pyparsing
+    - python
+    - tbb
+
+about:
+  home:
